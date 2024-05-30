@@ -1,5 +1,14 @@
-import "Ulises/styles/globals.css";
+import { AuthProvider } from "@/contexts";
+import 'semantic-ui-css/semantic.min.css';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+import "@/scss/global.scss";
+
+export default function App( props ) {
+  const { Component, pageProps } = props;
+
+  return (
+    <AuthProvider>
+        <Component {...pageProps} />
+    </AuthProvider>
+  )
 }
